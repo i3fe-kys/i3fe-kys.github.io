@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>i3fe.kys</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Splash Page -->
+    <div class="front-page" id="splash">
+      <div class="splash">
+        <h1 id="typing-effect"></h1>
+        <p class="click-to-enter">Click to Enter</p>
+      </div>
+      <p class="dev-credit">dev: i3fe</p>
+    </div>
+
+    <!-- Main Page -->
+    <div class="main-page" id="main-page">
+      <div class="container">
+        <img
+          src="https://i.pinimg.com/736x/03/fc/e2/03fce206d3c71fd10fb81ccca3dee24c.jpg"
+          alt="Profile Picture"
+          class="profile-pic"
+        />
+        <h1>i3fe.kys</h1>
+        <p>The Key to making money is to stay invested Lock In!</p>
+        <p class="dev-credit">dev: i3fe</p>
+
+        <div class="links">
+          <a
+            href="https://x.com/i3fe_bye"
+            target="_blank"
+            class="social-button"
+          >
+            <img src="twitter-icon.png" alt="Twitter" class="social-icon" />
+          </a>
+          <a
+            href="https://www.instagram.com/yourname"
+            target="_blank"
+            class="social-button"
+          >
+            <img src="instagram-icon.png" alt="Instagram" class="social-icon" />
+          </a>
+          <a
+            href="https://www.pinterest.com/yourname"
+            target="_blank"
+            class="social-button"
+          >
+            <img src="pinterest-icon.png" alt="Pinterest" class="social-icon" />
+          </a>
+          <a
+            href="https://www.roblox.com/users/4682424154/profile"
+            target="_blank"
+            class="social-button"
+          >
+            <img src="roblox-icon.png" alt="Roblox" class="social-icon" />
+          </a>
+          <a
+            href="https://github.com/i3fe-kys"
+            target="_blank"
+            class="social-button"
+          >
+            <img src="github-icon.png" alt="Github" class="social-icon" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Audio Player -->
+      <div class="audio-player">
+        <audio id="audio-player" controls>
+          <source src="audio/song1.mp3" type="audio/mp3" />
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+
+    <!-- Background Audio -->
+    <audio id="background-audio" loop>
+      <source src="background-music.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- Splash Transition Logic -->
+    <script>
+      const splash = document.getElementById("splash");
+      const mainPage = document.getElementById("main-page");
+      const backgroundAudio = document.getElementById("background-audio");
+
+      splash.addEventListener("click", () => {
+        splash.style.opacity = 0;
+        setTimeout(() => {
+          splash.style.display = "none";
+          mainPage.style.display = "flex";
+          mainPage.style.opacity = 0;
+          setTimeout(() => {
+            mainPage.style.transition = "opacity 1s";
+            mainPage.style.opacity = 1;
+            backgroundAudio.play();
+          }, 20);
+        }, 1000);
+      });
+    </script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
